@@ -2,21 +2,24 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>2boxes</title>
-        <link rel="stylesheet" href="style.css">
+        <title></title>
+        <link rel="stylesheet" href="style.css" charset="utf-8">
     </head>
-    <body onload="createDivs()">
+    <body>
         <h1>Home Page</h1>
         <h2>Select a language direction</h2>
-        <div id="ende" onclick="eng()">EN -> DE</div>
-        <div id="deen" onclick="de()">DE -> EN</div>
-        <div class="thnpbut hide" id="show" onclick="show()">Hide</div>
-        <div class="thnpbut hide" id="hide" onclick="hide()">Show</div>
-        <div class="thnpbut hide" id="home">home</div>
-        <div class="thnpbut hide" id="next" onclick="next()">next</div>
-        <div class="thnpbut hide" id="prev" onclick="prev()">prev</div>
-        <div class="hide" id="counter"></div>
+        <div id="langdirbuts">
+            <div class="langdir" onclick="ende()">EN -> DE</div>
+            <div class="langdir" onclick="deen()">DE -> EN</div>
+        </div>
+        <div class="hsnp hide" id="home" onclick="home()">HOME</div>
+        <div class="hsnp hide" id="sh" onclick="sh()">SHOW</div>
+        <div class="hsnp hide" id="next" onclick="next()">NEXT</div>
+        <div class="hsnp hide" id="prev" onclick="prev()">PREV</div>
+        <div id="inputs"></div>
+        <div class="counter hide"></div>
+        <!-- <div class="mobileClicker hide" onclick="mobileClicker()">Clicker</div> -->
         <script src="script.js"></script>
-        <script src="inputs.js"></script>
+        <script src="input.js"></script>
     </body>
 </html>
