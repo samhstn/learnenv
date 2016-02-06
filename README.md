@@ -36,7 +36,7 @@ I would like to learn German and wanted a learning environment to do so
 * Sort out counter to only display positive values
 * Fix hide show buttons to detect what is currently showing
 
-## Stretch Tasks
+## Stretch Goals
 
 * Add backend
 * Add mistakes log with mistakes test option
