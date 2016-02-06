@@ -6,11 +6,17 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body onload="createDivs()">
+        <h1>Home Page</h1>
+        <h2>Select a language direction</h2>
+        <div id="ende" onclick="eng()">EN -> DE</div>
+        <div id="deen" onclick="de()">DE -> EN</div>
         <div class="thnpbut hide" id="show" onclick="show()">Hide</div>
-        <div class="thnpbut" id="hide" onclick="hide()">Show</div>
-        <div class="thnpbut" id="home">home</div>
-        <div class="thnpbut" id="next">next</div>
-        <div class="thnpbut" id="prev">prev</div>
+        <div class="thnpbut hide" id="hide" onclick="hide()">Show</div>
+        <div class="thnpbut hide" id="home">home</div>
+        <div class="thnpbut hide" id="next" onclick="next()">next</div>
+        <div class="thnpbut hide" id="prev" onclick="prev()">prev</div>
+        <div class="hide" id="counter"></div>
         <script src="script.js"></script>
+        <script src="inputs.js"></script>
     </body>
 </html>
