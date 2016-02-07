@@ -22,7 +22,7 @@ function deen(){
     for(i=0;i<4;i++){
         document.getElementsByClassName("hsnp")[i].classList.remove("hide");
     }
-    // document.getElementsByClassName("mobileClicker")[0].classList.remove("hide");
+    document.getElementsByClassName("mobileClicker")[0].classList.remove("hide");
     //this for loop creates 5 english (eng) divs on the left and 5 german (ger) divs on the right, but hides the german ones,
     //while creating each one, it places a word from the array (input) in to the word slot on the div
     //it also sets up an onclick function on the eng divs to toggle unhide the ger divs (below?)
@@ -57,7 +57,7 @@ function ende(){
     for(i=0;i<4;i++){
         document.getElementsByClassName("hsnp")[i].classList.remove("hide");
     }
-    // document.getElementsByClassName("mobileClicker")[0].classList.remove("hide");
+    document.getElementsByClassName("mobileClicker")[0].classList.remove("hide");
     for(i=0;i<10;i++){
         var flip = [1,0,3,2,5,4,7,6,9,8];
         var node = document.createElement("div");
@@ -157,7 +157,7 @@ function home(){
     for(i=0;i<4;i++){
         document.getElementsByClassName("hsnp")[i].classList.add("hide");
     }
-    // document.getElementsByClassName("mobileClicker")[0].classList.add("hide");
+    document.getElementsByClassName("mobileClicker")[0].classList.add("hide");
     //resets the counter - hiding it and giving it no innerHTML
     document.getElementsByClassName("counter")[0].classList.add("hide");
     document.getElementsByClassName("counter")[0].innerHTML="";
@@ -224,10 +224,10 @@ function prev(){
     document.getElementsByClassName("counter")[0].innerHTML=count + " - " + (count + 4) + " of " + input.length/2;
 }
 
-// function mobileClicker(){
-//     if(showing===0){shone();}
-//     else if(showing===1){shtwo();}
-//     else if(showing===2){shthree();}
-//     else if(showing===3){shfour();}
-//     else if(showing===4){shfive();}
-// }
+function mobileClicker(){
+    if(showing===0){shone();}
+    else if(showing===1){shtwo();}
+    else if(showing===2){shthree();}
+    else if(showing===3){shfour();}
+    else if(showing===4){shfive();}
+}
