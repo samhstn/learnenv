@@ -28,11 +28,7 @@ I would like to learn German and wanted a learning environment to do so
 
 * Refactor js to be more concise more for loops and ternary functions
 * Refactor css and add mqueries to work on mobile
-* Neeten up the css so there are no overlaps of divs and perhaps add smooth transitions
-* Set up other translation direction button
-* Sort out prev button to be able to go to the end from beginning
-* Sort out counter to only display positive values
-* Fix hide show buttons to detect what is currently showing
+* Create hotkeys and a single clicker for mobile and swipe events for next and prev
 
 ## Stretch Tasks
 
@@ -40,3 +36,5 @@ I would like to learn German and wanted a learning environment to do so
 * Add mistakes log with mistakes test option
 * Add more verbs
 * Add a separate nouns option
+* Add a help page for how the app works
+* Add smooth transitions
