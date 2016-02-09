@@ -12,6 +12,7 @@ function mod(x,p){
 //It unhides hsnp buttons, places 5 german words on left and sets up the counter
 //sets target language to en
 
+document.getElementsByClassName("langdir")[0].addEventListener("click", deen);
 function deen(){
     //this for loop hides h1,h2 and two langdir option buttons
     for(i=1;i<=2;i++){
@@ -49,6 +50,7 @@ function deen(){
 //does the same as deen, but places 5 english words on the left
 //sets target language to de
 
+document.getElementsByClassName("langdir")[1].addEventListener("click", ende);
 function ende(){
     for(i=1;i<=2;i++){
         document.getElementsByTagName("h"+i)[0].classList.add("hide");
@@ -145,6 +147,7 @@ function shfive(){
 //removes the words divs, hides the hsnp buttons and unsets up the counter
 //It also reshows the titles and the two language direction buttons
 
+document.getElementById("home").addEventListener("click", home);
 function home(){
     //resets the words - removes the words back
     for(i=0;i<5;i++){
@@ -174,6 +177,7 @@ function home(){
 
 //sh function is a toggle button which changes the inner html of sh and shows or hides the target language
 
+document.getElementById("sh").addEventListener("click", sh);
 function sh(){
     if(showing>0){
         for(i=0;i<5;i++){
@@ -193,6 +197,7 @@ function sh(){
 
 //next button removes all showing divs on the right and moves the counter along by 5 and changes the input of the words
 
+document.getElementById("next").addEventListener("click", next);
 function next(){
     showing = 1;//to ensure sh() gets invoked correctly
     count = mod((count+5),input.length/2);
@@ -211,6 +216,7 @@ function next(){
 //prev button moves the counter back by 5 and changes the input of the words
 //similar to the next() function, but works in the opposite direction
 
+document.getElementById("prev").addEventListener("click", prev);
 function prev(){
     showing = 1;
     count = mod((count-5),input.length/2);
@@ -224,10 +230,12 @@ function prev(){
     document.getElementsByClassName("counter")[0].innerHTML=count + " - " + (count + 4) + " of " + input.length/2;
 }
 
+document.getElementsByClassName("mobileClicker")[0].addEventListener("click", mobileClicker);
 function mobileClicker(){
     if(showing===0){shone();}
     else if(showing===1){shtwo();}
     else if(showing===2){shthree();}
     else if(showing===3){shfour();}
     else if(showing===4){shfive();}
+    else{next();}
 }
