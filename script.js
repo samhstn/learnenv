@@ -12,6 +12,7 @@ function mod(x,p){
 //It unhides hsnp buttons, places 5 german words on left and sets up the counter
 //sets target language to en
 
+document.getElementsByClassName("langdir")[0].addEventListener("click", deen);
 function deen(){
     //this for loop hides h1,h2 and two langdir option buttons
     for(i=1;i<=2;i++){
@@ -22,7 +23,7 @@ function deen(){
     for(i=0;i<4;i++){
         document.getElementsByClassName("hsnp")[i].classList.remove("hide");
     }
-    // document.getElementsByClassName("mobileClicker")[0].classList.remove("hide");
+    document.getElementsByClassName("mobileClicker")[0].classList.remove("hide");
     //this for loop creates 5 english (eng) divs on the left and 5 german (ger) divs on the right, but hides the german ones,
     //while creating each one, it places a word from the array (input) in to the word slot on the div
     //it also sets up an onclick function on the eng divs to toggle unhide the ger divs (below?)
@@ -49,6 +50,7 @@ function deen(){
 //does the same as deen, but places 5 english words on the left
 //sets target language to de
 
+document.getElementsByClassName("langdir")[1].addEventListener("click", ende);
 function ende(){
     for(i=1;i<=2;i++){
         document.getElementsByTagName("h"+i)[0].classList.add("hide");
@@ -57,7 +59,7 @@ function ende(){
     for(i=0;i<4;i++){
         document.getElementsByClassName("hsnp")[i].classList.remove("hide");
     }
-    // document.getElementsByClassName("mobileClicker")[0].classList.remove("hide");
+    document.getElementsByClassName("mobileClicker")[0].classList.remove("hide");
     for(i=0;i<10;i++){
         var flip = [1,0,3,2,5,4,7,6,9,8];
         var node = document.createElement("div");
@@ -145,6 +147,7 @@ function shfive(){
 //removes the words divs, hides the hsnp buttons and unsets up the counter
 //It also reshows the titles and the two language direction buttons
 
+document.getElementById("home").addEventListener("click", home);
 function home(){
     //resets the words - removes the words back
     for(i=0;i<5;i++){
@@ -157,7 +160,7 @@ function home(){
     for(i=0;i<4;i++){
         document.getElementsByClassName("hsnp")[i].classList.add("hide");
     }
-    // document.getElementsByClassName("mobileClicker")[0].classList.add("hide");
+    document.getElementsByClassName("mobileClicker")[0].classList.add("hide");
     //resets the counter - hiding it and giving it no innerHTML
     document.getElementsByClassName("counter")[0].classList.add("hide");
     document.getElementsByClassName("counter")[0].innerHTML="";
@@ -174,6 +177,7 @@ function home(){
 
 //sh function is a toggle button which changes the inner html of sh and shows or hides the target language
 
+document.getElementById("sh").addEventListener("click", sh);
 function sh(){
     if(showing>0){
         for(i=0;i<5;i++){
@@ -193,6 +197,10 @@ function sh(){
 
 //next button removes all showing divs on the right and moves the counter along by 5 and changes the input of the words
 
+document.getElementById("next").addEventListener("click", next);
+window.addEventListener("keydown", function(k) {
+    if(k.keyCode===39){next();}
+});
 function next(){
     showing = 1;//to ensure sh() gets invoked correctly
     count = mod((count+5),input.length/2);
@@ -211,6 +219,10 @@ function next(){
 //prev button moves the counter back by 5 and changes the input of the words
 //similar to the next() function, but works in the opposite direction
 
+document.getElementById("prev").addEventListener("click", prev);
+window.addEventListener("keydown", function(k) {
+    if(k.keyCode===37){prev();}
+});
 function prev(){
     showing = 1;
     count = mod((count-5),input.length/2);
@@ -224,10 +236,23 @@ function prev(){
     document.getElementsByClassName("counter")[0].innerHTML=count + " - " + (count + 4) + " of " + input.length/2;
 }
 
-// function mobileClicker(){
-//     if(showing===0){shone();}
-//     else if(showing===1){shtwo();}
-//     else if(showing===2){shthree();}
-//     else if(showing===3){shfour();}
-//     else if(showing===4){shfive();}
-// }
+document.getElementsByClassName("mobileClicker")[0].addEventListener("click", mobileClicker);
+window.addEventListener("keydown", function(k) {
+    if(k.keyCode===32){mobileClicker();}
+});
+
+function mobileClicker(){
+    if(showing===0){shone();}
+    else if(showing===1){shtwo();}
+    else if(showing===2){shthree();}
+    else if(showing===3){shfour();}
+    else if(showing===4){shfive();}
+    else{next();}
+}
+
+//preventing the default action of arrow keys, which cause the page to scroll
+window.addEventListener("keydown", function(e) {
+    if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+        e.preventDefault();
+    }
+}, false);
