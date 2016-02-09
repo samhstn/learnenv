@@ -87,8 +87,16 @@ h2{
 .mobileClicker{
     position: absolute;
     top: 20%;
-    left: 10px;
+    left: -200px;
     background-color: brown;
     height: 70%;
     width: 8%;
+}
+
+@media only screen
+    and (max-device-width: 700px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+        .mobileClicker{
+            left: 10px;
+        }
 }

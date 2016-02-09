@@ -198,6 +198,9 @@ function sh(){
 //next button removes all showing divs on the right and moves the counter along by 5 and changes the input of the words
 
 document.getElementById("next").addEventListener("click", next);
+window.addEventListener("keydown", function(k) {
+    if(k.keyCode===39){next();}
+});
 function next(){
     showing = 1;//to ensure sh() gets invoked correctly
     count = mod((count+5),input.length/2);
@@ -217,6 +220,9 @@ function next(){
 //similar to the next() function, but works in the opposite direction
 
 document.getElementById("prev").addEventListener("click", prev);
+window.addEventListener("keydown", function(k) {
+    if(k.keyCode===37){prev();}
+});
 function prev(){
     showing = 1;
     count = mod((count-5),input.length/2);
@@ -231,6 +237,10 @@ function prev(){
 }
 
 document.getElementsByClassName("mobileClicker")[0].addEventListener("click", mobileClicker);
+window.addEventListener("keydown", function(k) {
+    if(k.keyCode===32){mobileClicker();}
+});
+
 function mobileClicker(){
     if(showing===0){shone();}
     else if(showing===1){shtwo();}
@@ -239,3 +249,10 @@ function mobileClicker(){
     else if(showing===4){shfive();}
     else{next();}
 }
+
+//preventing the default action of arrow keys, which cause the page to scroll
+window.addEventListener("keydown", function(e) {
+    if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+        e.preventDefault();
+    }
+}, false);
