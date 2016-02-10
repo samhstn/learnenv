@@ -47,10 +47,10 @@ h2{
     background-color: brown;
     border-radius: 50%;
 }
-#home{top: 2%;}
-#sh{top: 27%;}
-#next{top: 52%;}
-#prev{top: 77%;}
+.home{top: 2%;}
+.sh{top: 27%;}
+.next{top: 52%;}
+.prev{top: 77%;}
 #langdirbuts{
     text-align: center;
     height: 6vh;
@@ -75,8 +75,8 @@ h2{
     background-color: black;
     color: white;
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 1%;
+    left: 1%;
     padding: 2% 1%;
     border-radius: 5%;
     font-family: fantasy;
@@ -86,17 +86,45 @@ h2{
 }
 .mobileClicker{
     position: absolute;
-    top: 20%;
+    top: 16%;
     left: -200px;
     background-color: brown;
-    height: 70%;
-    width: 8%;
+    height: 86%;
+    width: 10%;
 }
 
 @media only screen
     and (max-device-width: 700px)
     and (-webkit-min-device-pixel-ratio: 2) {
         .mobileClicker{
-            left: 10px;
+            left: 1%;
         }
+        .english{
+            background-color: #836FFF;
+        }
+        .german{
+            background-color: #FF6666;
+        }
+        #inputs{
+            left:12%;
+            top: 2%;
+            height: 100%;
+            width: 68%;
+        }
+        .leftright{
+            font-size: 6vmin;
+            height: 16%;
+            border-radius: 5%;
+            float: left;
+            margin: 0.5%;
+            padding-top: 2%;
+        }
+        .hsnp{
+            right: -6%;
+            padding: 6%;
+        }
+        .home{top: 0%;}
+        .sh{top: 27%;}
+        .next{top: 54%;}
+        .prev{top: 81%;}
 }
