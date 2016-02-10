@@ -90,7 +90,7 @@ h2{
     left: -200px;
     background-color: brown;
     height: 86%;
-    width: 10%;
+    width: 13%;
 }
 
 @media only screen
@@ -106,13 +106,14 @@ h2{
             background-color: #FF6666;
         }
         #inputs{
-            left:12%;
+            left:14%;
             top: 2%;
             height: 100%;
-            width: 68%;
+            width: 80%;
         }
         .leftright{
-            font-size: 6vmin;
+            font-size: 7vmin;
+            font-weight: bold;
             height: 16%;
             border-radius: 5%;
             float: left;
@@ -120,8 +121,9 @@ h2{
             padding-top: 2%;
         }
         .hsnp{
-            right: -6%;
-            padding: 6%;
+            right: -8%;
+            padding: 4% 0;
+            font-size: 24px;
         }
         .home{top: 0%;}
         .sh{top: 27%;}
