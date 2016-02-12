@@ -285,3 +285,5 @@ window.addEventListener("keydown", function(e) {
         e.preventDefault();
     }
 }, false);
+
+//This function takes two arguments and returns a portion of the global variable inputs

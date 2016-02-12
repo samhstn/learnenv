@@ -36,6 +36,8 @@ I would like to learn German and wanted a learning environment to do so
 * It should default to zero and length 10, this should be read by one function which takes these two arguments then adjusts the global variable of input to the specifications.
 It should not leave behind distortions of the variable.
 * To start we should have just plus and minus buttons to adjust the default start point and length and add the sliding functionality later
+* Organize javascript files to be shorter and place functions well with good names
+* Lay out css better and refactor it
 
 
 ## Stretch Goals
