@@ -2,10 +2,16 @@
 var count = 1;
 //The gloabl variable is set initially to 0, it is used for keeping track of how many of the right divs are showing
 var showing = 0;
+//This global variable is 1 if we are going from de to en, otherwise it is 0
+var entode = 0;
 //modulus function setting negative numbers to positives for a particular number mod(-6,10) = -6 mod 10 = 4
-
 function mod(x,p){
     return x > 0 ? x%p : x%p+p;
+}
+//this function maps 0 to 1, 1 to 0, ... 8 to 9, 9 to 8
+//10 to 11, 11 to 10, ..., 18 to 19, 19 to 19 etc
+function mapping(numb){
+    return numb%2===0 ? numb+1 : numb-1;
 }
 
 // deen function hides h1, h2 and langdir class.
@@ -52,6 +58,7 @@ function deen(){
 
 document.getElementsByClassName("langdir")[1].addEventListener("click", ende);
 function ende(){
+    entode++;
     for(i=1;i<=2;i++){
         document.getElementsByTagName("h"+i)[0].classList.add("hide");
         document.getElementsByClassName("langdir")[i-1].classList.add("hide");
@@ -61,9 +68,8 @@ function ende(){
     }
     document.getElementsByClassName("mobileClicker")[0].classList.remove("hide");
     for(i=0;i<10;i++){
-        var flip = [1,0,3,2,5,4,7,6,9,8];
         var node = document.createElement("div");
-        node.innerHTML=input[flip[i]];
+        node.innerHTML=input[mapping(i)];
         if(i%2 === 0){
             node.className="left leftright english";
         }
@@ -149,6 +155,7 @@ function shfive(){
 
 document.getElementsByClassName("home")[0].addEventListener("click", home);
 function home(){
+    if(entode===1){entode--;}
     //resets the words - removes the words back
     for(i=0;i<5;i++){
         var child1 = document.getElementsByClassName("left")[0];
@@ -207,10 +214,18 @@ function next(){
     sh(); //hides all divs on the right and sets showing to 0
     //the for loop correctly assigns the divs on the left and right to the next batch of 10
     for(i=0;i<10;i++){
-        if(i%2===0){
-            document.getElementsByClassName("left")[Math.round((i-0.1)/2)].innerHTML=input[i+count*2-2];
+        if(entode===0){
+            if(i%2===0){
+                document.getElementsByClassName("left")[Math.round((i-0.1)/2)].innerHTML=input[i+count*2-2];
+            }
+            else{document.getElementsByClassName("right")[Math.round((i-0.1)/2)].innerHTML=input[i+count*2-2];}
         }
-        else{document.getElementsByClassName("right")[Math.round((i-0.1)/2)].innerHTML=input[i+count*2-2];}
+        else{
+            if(i%2===0){
+                document.getElementsByClassName("left")[Math.round((i-0.1)/2)].innerHTML=input[mapping(i+count*2-2)];
+            }
+            else{document.getElementsByClassName("right")[Math.round((i-0.1)/2)].innerHTML=input[mapping(i+count*2-2)];}
+        }
     }
     //the next line updates the counter
     document.getElementsByClassName("counter")[0].innerHTML=count + " - " + (count + 4) + " of " + input.length/2;
@@ -228,10 +243,18 @@ function prev(){
     count = mod((count-5),input.length/2);
     sh();
     for(i=0;i<10;i++){
-        if(i%2===0){
-            document.getElementsByClassName("left")[Math.round((i-0.1)/2)].innerHTML=input[i+count*2-2];
+        if(entode===0){
+            if(i%2===0){
+                document.getElementsByClassName("left")[Math.round((i-0.1)/2)].innerHTML=input[i+count*2-2];
+            }
+            else{document.getElementsByClassName("right")[Math.round((i-0.1)/2)].innerHTML=input[i+count*2-2];}
         }
-        else{document.getElementsByClassName("right")[Math.round((i-0.1)/2)].innerHTML=input[i+count*2-2];}
+        else{
+            if(i%2===0){
+                document.getElementsByClassName("left")[Math.round((i-0.1)/2)].innerHTML=input[mapping(i+count*2-2)];
+            }
+            else{document.getElementsByClassName("right")[Math.round((i-0.1)/2)].innerHTML=input[mapping(i+count*2-2)];}
+        }
     }
     document.getElementsByClassName("counter")[0].innerHTML=count + " - " + (count + 4) + " of " + input.length/2;
 }
