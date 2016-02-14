@@ -122,12 +122,6 @@ h2{
     border-radius: 20%;
 }
 
-
-
-
-
-
-
 @media only screen
     and (max-device-width: 700px)
     and (-webkit-min-device-pixel-ratio: 2) {

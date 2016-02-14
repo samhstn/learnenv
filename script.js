@@ -25,6 +25,7 @@ function deen(){
         document.getElementsByTagName("h"+i)[0].classList.add("hide");
         document.getElementsByClassName("langdir")[i-1].classList.add("hide");
     }
+    document.getElementsByClassName("startPoint")[0].classList.add("hide");
     //this for loop shows (removes the hide class from) the four hsnp buttons
     for(i=0;i<4;i++){
         document.getElementsByClassName("hsnp")[i].classList.remove("hide");
@@ -63,6 +64,7 @@ function ende(){
         document.getElementsByTagName("h"+i)[0].classList.add("hide");
         document.getElementsByClassName("langdir")[i-1].classList.add("hide");
     }
+    document.getElementsByClassName("startPoint")[0].classList.add("hide");
     for(i=0;i<4;i++){
         document.getElementsByClassName("hsnp")[i].classList.remove("hide");
     }
@@ -175,10 +177,10 @@ function home(){
     count=1;
     showing=0;
     //Shows the h1 and h2 tags as well as the two language directions
-    document.getElementsByTagName("h1")[0].classList.remove("hide");
-    document.getElementsByTagName("h2")[0].classList.remove("hide");
+    document.getElementsByClassName("startPoint")[0].classList.remove("hide");
     for(i=0;i<2;i++){
         document.getElementsByClassName("langdir")[i].classList.remove("hide");
+        document.getElementsByTagName("h"+(i+1))[0].classList.remove("hide");
     }
 }
 
