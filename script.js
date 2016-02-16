@@ -288,4 +288,45 @@ window.addEventListener("keydown", function(e) {
     }
 }, false);
 
-//This function takes two arguments and returns a portion of the global variable inputs
+//For review--This function takes two arguments and returns a portion of the global variable inputs
+
+var bar = document.getElementsByClassName("bar")[0];
+var button = document.getElementsByClassName("button")[0];
+var info = document.getElementsByClassName("info")[0];
+var slider = document.getElementsByClassName("slider")[0];
+slider.addEventListener("mousedown", start);
+slider.addEventListener("mouseup", stop);
+var input = 0;
+var increment = 1;
+info.innerHTML = input;
+
+function start(event){
+    slider.addEventListener("mousemove", move);
+    move(event);
+}
+
+function move(event){
+    var x = Math.round((((event.clientX - slider.offsetLeft) / slider.offsetWidth))*100/increment)*increment;
+    input = x<100 ? x : 100;
+	info.innerHTML = input;
+	button.style.left = input + "%";
+}
+
+function stop(event){
+	slider.removeEventListener('mousemove', move);
+    move(event);
+}
+
+document.getElementsByClassName("plus")[0].addEventListener("click", plus);
+function plus(){
+    input = input<100 ? input + increment : 100;
+    info.innerHTML = input;
+    button.style.left = input + "%";
+}
+
+document.getElementsByClassName("minus")[0].addEventListener("click", minus);
+function minus(){
+    input = input>0 ? input - increment : 0;
+    info.innerHTML = input;
+    button.style.left = input + "%";
+}

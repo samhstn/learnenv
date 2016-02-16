@@ -121,6 +121,31 @@ h2{
     float: left;
     border-radius: 20%;
 }
+.slider{
+    position: relative;
+    margin: 5% auto;
+    width: 100%;
+    height: 100%;
+    /*border: 1px solid red;*/
+}
+.bar{
+    position: absolute;
+    margin-top: 1.5%;
+    width: 100%;
+    height: 70%;
+    background-color: grey;
+}
+.button{
+    z-index: 1;
+    position: absolute;
+    background-color: blue;
+    height: 100%;
+    width: 10%;
+    border-radius: 10%;
+}
+.info{
+
+}
 
 @media only screen
     and (max-device-width: 700px)
